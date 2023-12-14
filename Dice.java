@@ -7,11 +7,11 @@
  */
 public class Dice
 {
-    Dice die1;
-    Dice die2;
-    Dice die3;
-    Dice die4;
-    Dice die5;
+     private Dice die1;
+     private Dice die2;
+     private Dice die3;
+     private Dice die4;
+     private Dice die5;
 
     /**
      * Contains the current value of the die
@@ -61,11 +61,16 @@ public class Dice
             die5.roll();
         }
     }
+    public String summarize(){
+        String summary = "";
+        for(int sides = 1; sides <7; sides++){
+            if(die1.getValue() == sides) {
     
-    /**
-     * Roll the die and return the new value
-     * @return Die value
-     */
-
+        }
+        }
+        /**
+         * Roll the die and return the new value
+         * @return Die value
+         */
+    }
 }
-
