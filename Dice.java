@@ -1,78 +1,40 @@
 
 /**
- * Abstracts one six-sided die (plural is dice)
- * 
- * @Mr. Jaffe
- * @1.0 2017-07-13
+ * Write a description of class Dice here.
+ *
+ * @author (your name)
+ * @version (a version number or a date)
  */
+import java.util.Random;
 public class Dice
 {
-    private Dice die1;
-    private Dice die2;
-    private Dice die3;
-    private Dice die4;
-    private Dice die5;
-
-    /**
-     * Contains the current value of the die
-     */
+    // instance variables - replace the example below with your own
     private int value;
+    private DieN die1;
+    private DieN die2;
 
     /**
-     * Constructor to do an initial roll to set the first value
+     * Constructor for objects of class Dice
      */
-    public Dice() 
+    public Dice()
     {
-        die1 = new Dice();
-        die2 = new Dice();
-        die3 = new Dice();
-        die4 = new Dice();
-        die5 = new Dice();
+        // initialise instance variables
+        this.die1 = new DieN(6);
+        this.die2 = new DieN(6);
     }
 
-    /**
-     * Getter for value
-     * @return Die value
-     */
-    public void roll() 
-    {
-        die1.roll();
-        die2.roll();
-        die3.roll();
-        die4.roll();
-        die5.roll();  
+    public void roll() {
+        this.die1.roll();
+        this.die2.roll();
     }
 
-    /**
-     * Roll the die! Generate random number 1 <= x <= 6 and assign to value
-     * Note that roll does NOT return the new value
-     */
-    public void roll(int dieNumber)
-    {
-        if (dieNumber == 1) {
-            die1.roll();
-        } else if (dieNumber ==2) {
-            die2.roll();
-        } else if (dieNumber ==3) {
-            die3.roll();
-        } else if (dieNumber ==4) {
-            die4.roll();
-        } else if (dieNumber ==5) {
-            die5.roll();
-        }
+    public int getValue() {
+        roll();
+        return die1.getValue()+die2.getValue();
     }
 
-    public String summarize(){
-        String summary ;
-        int getValue;
-        for(int sides = 1; sides <7; sides++){
-            if(die1.getValue == sides) {
-                
-            }
-        }
-        /**
-         * Roll the die and return the new value
-         * @return Die value
-         */
+    public int rollAndGetValue() {
+        roll();
+        return getValue();
     }
 }
