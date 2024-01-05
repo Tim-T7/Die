@@ -28,6 +28,7 @@ public class Yahtzee
         this.die5 = new Die6();
         roll();
     }
+
     public void roll() {
         this.die1.roll();
         this.die2.roll();
@@ -35,6 +36,7 @@ public class Yahtzee
         this.die4.roll();
         this.die5.roll();
     }
+
     public void roll(int dieNumber) {
         if (dieNumber == 1) {
             this.die1.roll();
@@ -51,7 +53,8 @@ public class Yahtzee
         if (dieNumber == 5) {
             this.die5.roll();
         }
-        }
+    }
+
     public String summarize() {
         String Summary = "";
         int[] dice= {this.die1.getValue(),this.die2.getValue(),this.die3.getValue(),this.die4.getValue(),this.die5.getValue()};
@@ -62,7 +65,19 @@ public class Yahtzee
                     count++;
                 }
             }
-            
+            String ending = sides+1 != 6? ";":"";
+            Summary += Integer.toString(sides+1) + "-" + Integer.toString(count)+ending;
         }
+        return Summary;
     }
+
+    public String toString(){
+        String strOfDice = "";
+        int[] dice = {this.die1.getValue(),this.die2.getValue(),this.die3.getValue(),this.die4.getValue(),this.die5.getValue()};
+        for (int values = 0; values <dice.length; values++) {
+            strOfDice += Integer.toString (dice[values]) + " ";
+        }
+        return "Dice values:" + strOfDice.substring(0,strOfDice.length()-1);
     }
+}
+
